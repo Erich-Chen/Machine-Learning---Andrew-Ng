@@ -1,3 +1,5 @@
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 # Machine-Learning---Andrew-Ng
 
 I have enrolled the course `Machine Learning` tought by professor Andrew Ng on couresa since July 9th, 2018. 
