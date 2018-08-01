@@ -5,3 +5,5 @@ I have enrolled the course `Machine Learning` tought by professor Andrew Ng on c
 https://www.coursera.org/learn/machine-learning/
 
 I found it very helpful to read supplement pages after each video. So I copied out them and edit with markdown with KaTeX enhancement. 
+
+$$\sum_{i=1}^n x = \frac{n \times (n+1)}{2}$$
