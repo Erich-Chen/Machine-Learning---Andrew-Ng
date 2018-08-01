@@ -4,11 +4,10 @@ I have enrolled the course `Machine Learning` tought by professor Andrew Ng on c
 
 https://www.coursera.org/learn/machine-learning/
 
-I found it very helpful to read supplement pages after each video. So I copied out them and edit with markdown with KaTeX enhancement. 
+I found it very helpful to read supplement pages after each video. So I copied out them and edit with markdown with MathJax enhancement. 
 
-$$\sum_{i=1}^n x = \frac{n \times (n+1)}{2}$$
 
-## My solution to render Math Equations on github 
+## My solution to render Math Equations on github repo
 
 I installed chrome extension `Markdown Viewer` 
 
