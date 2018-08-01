@@ -26,7 +26,7 @@ Set up `Markdown Viewer`:
 
 2. Click on the Markdown Viewer icon and select 'Advanced Options'. Then ADD "raw.githubusercontent.com" into `Allowed Origins`. 
 
-**NOTE:** Do not add "github.com"! 
+**NOTE:** Do not add (must exclude) "github.com"! Because github.com is loaded as HTML though the URL ends with .md.  
 
 3. Tick CSP (Disable Content Security Policy) under origin "HTTPS://raw.githubusercontent.com". 
 
