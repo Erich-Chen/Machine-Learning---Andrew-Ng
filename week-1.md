@@ -6,7 +6,7 @@
 
 Two definitions of Machine Learning are offered. Arthur Samuel described it as: "the field of study that gives computers the ability to learn without being explicitly programmed." This is an older, informal definition.
 
-Tom Mitchell provides a more modern definition: "A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E."
+Tom Mitchell provides a more modern definition: "A computer program is said to learn from experience $E$ with respect to some class of tasks $T$ and performance measure $P$, if its performance at tasks in $T$, as measured by $P$, improves with experience $E$."
 
 ```
     Example: playing checkers.
@@ -15,7 +15,7 @@ Tom Mitchell provides a more modern definition: "A computer program is said to l
     P = the probability that the program will win the next game.
 ```
 
-In general, any machine learning problem can be assigned to one of two broad classifications: Supervised learning and Unsupervised learning.
+In general, any machine learning problem can be assigned to one of two broad classifications: **Supervised learning** and **Unsupervised learning**.
 
 ### 1.2 Supervised Learning
 
@@ -53,7 +53,7 @@ Non-clustering: The "Cocktail Party Algorithm", allows you to find structure in 
 
 ### 2.1 Model Representation
 
-To establish notation for future use, we’ll use  $x^{(i)}$  to denote the “input” variables (living area in this example), also called input features, and  $y^{(i)}$  to denote the “output” or target variable that we are trying to predict (price). A pair  $(x^{(i)} , y^{(i)})$  is called a training example, and the dataset that we’ll be using to learn—a list of m training examples  $(x^(i),y^(i));i=1,...,m$—is called a training set. Note that the superscript “$^{(i)}$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$. 
+To establish notation for future use, we’ll use  $x^{(i)}$  to denote the “input” variables (living area in this example), also called input features, and  $y^{(i)}$  to denote the “output” or target variable that we are trying to predict (price). A pair  $(x^{(i)} , y^{(i)})$  is called a training example, and the dataset that we’ll be using to learn—a list of m training examples  $(x^{(i)},y^{(i)});i=1,...,m$ — is called a training set. Note that the superscript “$^{(i)}$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$. 
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X → Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function h is called a *hypothesis*. Seen pictorially, the process is therefore like this:
 
@@ -69,14 +69,14 @@ $\quad \displaystyle J(\theta_0, \theta_1) = \dfrac{1}{2m} \sum _{i=1}^m ( \hat{
 
 To break it apart, it is  $\frac{1}{2} \bar{x}$  where  $\bar{x}$  is the mean of the squares of  $h_\theta (x_{i}) - y_{i}$​  , or the difference between the predicted value and the actual value.
 
-This function is otherwise called the "Squared error function", or "Mean squared error". The mean is halved  $(\frac{1}{2})$  as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the  $\frac{1}{2} ​term. The following image summarizes what the cost function does:
+This function is otherwise called the "Squared error function", or "Mean squared error". The mean is halved  $(\frac{1}{2})$  as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the  $\frac{1}{2}$ ​term. The following image summarizes what the cost function does:
 
 ![](pictures/Screen-Shot-2016-12-02-at-5.23.31-PM.png)
 
 
 ### 2.3 Cost Function - Intuition I
 
-If we try to think of it in visual terms, our training data set is scattered on the $x-y$ plane. We are trying to make a straight line (defined by  $h_\theta(x)$) which passes through these scattered data points.
+If we try to think of it in visual terms, our training data set is scattered on the $x-y$ plane. We are trying to make a straight line (defined by $h_\theta(x)$) which passes through these scattered data points.
 
 Our objective is to get the best possible line. The best possible line will be such so that the average squared vertical distances of the scattered points from the line will be the least. Ideally, the line should pass through all the points of our training data set. In such a case, the value of  $J(\theta_0, \theta_1)$ will be 0. The following example shows the ideal situation where we have a cost function of 0.
 
@@ -124,7 +124,7 @@ We will know that we have succeeded when our cost function is at the very bottom
 
 The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.
 
-For example, the distance between each 'star' in the graph above represents a step determined by our parameter $α$. A smaller $α$ would result in a smaller step and a larger $α$ results in a larger step. The direction in which the step is taken is determined by the partial derivative of  $J(\theta_0,\theta_1)$. Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
+For example, the distance between each 'star' in the graph above represents a step determined by our parameter $α$. A smaller $\alpha$ would result in a smaller step and a larger $\alpha$ results in a larger step. The direction in which the step is taken is determined by the partial derivative of  $J(\theta_0,\theta_1)$. Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.
 
 The gradient descent algorithm is:
 
@@ -134,7 +134,7 @@ $\quad \displaystyle \theta_j := \theta_j - \alpha \frac{\partial}{\partial \the
 
 `where j=0,1 represents the feature index number.` 
 
-At each iteration $j$, one should simultaneously update the parameters  $\theta_1, \theta_2,...,\theta_n$​. Updating a specific parameter prior to calculating another one on the  $j^{(th)}$ iteration would yield to a wrong implementation.
+At each iteration $j$, one should simultaneously update the parameters  $\theta_1, \theta_2,...,\theta_n$. Updating a specific parameter prior to calculating another one on the  $j^{(th)}$ iteration would yield to a wrong implementation.
 
 ![](pictures/Screenshot-2016-11-02-00.19.56.png)
 
@@ -157,8 +157,9 @@ On a side note, we should adjust our parameter  $\alpha$ to ensure that the grad
 
 
 **How does gradient descent converge with a fixed step size  $\alpha$?**
-The intuition behind the convergence is that  $\frac{d}{d\theta_1}J(\theta_1)$ approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:
-$\displaystyle \theta_1:=\theta_1-\alpha * 0$
+
+The intuition behind the convergence is that $\displaystyle \frac{d}{d\theta_1}J(\theta_1)$ approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:
+$\displaystyle \quad \theta_1:=\theta_1-\alpha \times 0$
 
 ![](pictures/Screenshot-2016-11-03-00.06.00.png)
 
@@ -177,15 +178,15 @@ $\quad \displaystyle \theta_1 := \theta_1 - \alpha \frac{1}{m} \sum_{i=1}^m (h_\
 
 `}`
 
-where $m$ is the size of the training set,  $\theta_0$ a constant that will be changing simultaneously with  $\theta_1$ and  $x_{i}, y_{i}$ ​are values of the given training set (data).
+where $m$ is the size of the training set,  $\theta_0$ a constant that will be changing simultaneously with  $\theta_1$ and  $x_{i}, y_{i}$ are values of the given training set (data).
 
-Note that we have separated out the two cases for  $\theta_j$ into separate equations for  $\theta_0$ and $\theta_1$​; and that for  $\theta_1$​  we are multiplying $x_{i}$x at the end due to the derivative. The following is a derivation of  $\frac {\partial}{\partial \theta_j}J(\theta)$ for a single example :
+Note that we have separated out the two cases for  $\theta_j$ into separate equations for  $\theta_0$ and $\theta_1$​; and that for  $\theta_1$ we are multiplying $x_i$ at the end due to the derivative. The following is a derivation of  $\frac {\partial}{\partial \theta_j}J(\theta)$ for a single example :
 
 ![](pictures/Screenshot-2016-11-09-08.30.54.png)
 
 The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.
 
-So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called  **batch gradient descent**. Note that, while gradient descent can be susceptible to local minima in general, the optimization problem we have posed here for linear regression has only one global, and no other local, optima; thus gradient descent always converges (assuming the learning rate $α$ is not too large) to the global minimum. Indeed, $J$ is a convex quadratic function. Here is an example of gradient descent as it is run to minimize a quadratic function.
+So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called  **batch gradient descent**. Note that, while gradient descent can be susceptible to local minima in general, the optimization problem we have posed here for linear regression has only one global, and no other local, optima; thus gradient descent always converges (assuming the learning rate $\alpha$ is not too large) to the global minimum. Indeed, $J$ is a convex quadratic function. Here is an example of gradient descent as it is run to minimize a quadratic function.
 
 ![](pictures/Screenshot-2016-11-09-08.36.49.png)
 
