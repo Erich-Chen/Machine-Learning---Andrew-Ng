@@ -12,7 +12,7 @@ I found it very helpful to read supplement pages after each video. So I copied o
 I installed chrome extension `Markdown Viewer` 
 
 - Chrome WebStore: 
-    https://chrome.google.com/webstore/detail/markdown-viewer/
+    https://chrome.google.com/webstore/detail/markdown-viewer/ckkdlimhmcjmikdlpkmbgfkaikojcbjk
 
 - github: 
     https://github.com/simov/markdown-viewer
