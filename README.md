@@ -28,3 +28,4 @@ Set up `Markdown Viewer`:
 
 3. Tick CSP (Disable Content Security Policy) under origin "HTTPS://raw.githubusercontent.com". 
 
+4. Click "RAW" button in a github repo, the markdown pages will be rendered by Markdown Viewer instead of raw plaintext. 
