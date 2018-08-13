@@ -41,7 +41,7 @@ That is, we want to minimize our cost function $J$ using an optimal set of param
 $\quad \displaystyle \dfrac{\partial}{\partial \Theta_{i,j}^{(l)}}J(\Theta)$ 
 
 To do so, we use the following algorithm: 
-    ![](Pictures/Screenshot-2017-01-10-17.13.27.png) 
+    ![](pictures/Screenshot-2017-01-10-17.13.27.png) 
 
 **Back propagation Algorithm** 
 
@@ -55,7 +55,7 @@ For training example t =1 to m:
  
 2. Perform forward propagation to compute $a^{(l)}$ for $l=2,3,…,L$ 
 
-   ![](Pictures/Screenshot-2017-01-10-18.16.50.png) 
+   ![](pictures/Screenshot-2017-01-10-18.16.50.png) 
 
 3. Using $y^{(t)}$, compute $\delta^{(L)} = a^{(L)} - y^{(t)}$ 
    Where L is our total number of layers and $a^{(L)}$ is the vector of outputs of the activation units for the last layer. So our "error values" for the last layer are simply the differences of our actual results in the last layer and the correct outputs in y. To get the delta values of the layers before the last layer, we can use an equation that steps us back from right to left: 
@@ -99,10 +99,10 @@ $\quad \displaystyle \delta_j^{(l)} = \dfrac{\partial}{\partial z_j^{(l)}} cost(
 
 Recall that our derivative is the slope of a line tangent to the cost function, so the steeper the slope the more incorrect we are. Let us consider the following neural network below and see how we could calculate some $\delta_j^{(l)}$:
 
-  ![](Pictures/fixx.png)
+  ![](pictures/fixx.png)
 
 In the image above, to calculate $\delta_2^{(2)}$, we multiply the weights $\Theta_{12}^{(2)}$ and $\Theta_{22}^{(2)}$ by their respective $\delta$ values found to the right of each edge. So we get $\delta_2^{(2)} = \Theta_{12}^{(2)} * \delta_1^{(3)} + \Theta_{22}^{(2)} * \delta_2^{(3)}$. To calculate every single possible $\delta_j^{(l)}$, we could start from the right of our diagram. We can think of our edges as our $\Theta_{ij}$. Going from right to left, to calculate the value of $\delta_j^{(l)}$, you can just take the over all sum of each weight times the $\delta$ it is coming from. Hence, another example would be $\delta_2^{(3)} = \Theta_{12}^{(3)} * \delta_1^{(4)}$.
-​
+
 
 ### #Backpropagation in Practice 
 
@@ -164,7 +164,7 @@ Once you have verified **once** that your backpropagation algorithm is correct, 
 ### 9.6  Random Initialization
 
 Initializing all theta weights to zero does not work with neural networks. When we backpropagate, all nodes will update to the same value repeatedly. Instead we can randomly initialize our weights for our $\Theta$ matrices using the following method: 
-  ![](Pictures/Screen-Shot-2016-12-04-at-11.27.28-AM.png)
+  ![](pictures/Screen-Shot-2016-12-04-at-11.27.28-AM.png)
 
 Hence, we initialize each $\Theta^{(l)}_{ij}$ to a random value between $[-\epsilon,\epsilon]$. Using the above formula guarantees that we get the desired bound. The same procedure applies to all the $\Theta$'s. Below is some working code you could use to experiment. 
 
@@ -215,7 +215,7 @@ for i = 1:m,
 ```
 
 The following image gives us an intuition of what is happening as we are implementing our neural network:
-  ![](Pictures/Screen-Shot-2016-12-05-at-10.40.35-AM.png)
+  ![](pictures/Screen-Shot-2016-12-05-at-10.40.35-AM.png)
 
 Ideally, you want $h_\Theta(x^{(i)}) \approx y^{(i)}$. This will minimize our cost function. However, keep in mind that $J(\Theta)$ is not convex and thus we can end up in a local minimum instead. 
 
